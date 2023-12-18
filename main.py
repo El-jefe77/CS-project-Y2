@@ -1,13 +1,11 @@
 import pygame
 from sys import exit
 from classes import Card
-
-#initialize pygame
 pygame.init()
-#creation of empty tab and size of the tab
+
+#setup the screen/ framerate
 pygame.display.set_caption("Card game")
 screen = pygame.display.set_mode((1200,600))
-#set frame rate for an even speed across devices 
 clock = pygame.time.Clock()              
 
 #creation of surfaces 
@@ -15,7 +13,7 @@ clock = pygame.time.Clock()
 background_surface = pygame.image.load("images/table.jpg").convert_alpha()
 background_surface = pygame.transform.scale(background_surface, (1200, 600))
 
-#ORIGINAL CARD/ size of card "aspect ratio"
+#ORIGINAL CARD/ size of card "aspect ratio" (NO OOB)
 card = pygame.image.load("cards img/ace_of_spades.png").convert_alpha()
 card1 = pygame.transform.scale_by(card, 0.2)
 
@@ -35,5 +33,6 @@ while True:
     screen.blit(background_surface,(0,0))
     screen.blit(card1, (100, 100))
 
+    #framerate 
     pygame.display.update()
     clock.tick(60)
