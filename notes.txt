@@ -31,3 +31,9 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+
+
+    ----------------------------------
+    example project pygame 
+    
+    https://github.com/bungee-boy/Retro-Rampage/blob/main/README.md
