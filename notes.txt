@@ -41,3 +41,19 @@ while True:
 ----------------------------------
 
     link download cards
+
+
+    scale and resize surfaces 
+    https://www.youtube.com/watch?v=Xzmpl5tnJnc&ab_channel=CodingWithRuss
+
+
+
+    ----------------------------------
+
+for the creation of classes in the main code 
+
+from classes import Card
+
+card_1 = Card ("values to each attribute")
+
+    ----------------------------------

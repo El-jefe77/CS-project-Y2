@@ -1,5 +1,6 @@
 import pygame
 from sys import exit
+from classes import Card
 
 #initialize pygame
 pygame.init()
@@ -10,16 +11,19 @@ screen = pygame.display.set_mode((1200,600))
 clock = pygame.time.Clock()              
 
 #creation of surfaces 
-    #Surface content (background)
-background_surface = pygame.image.load("images/table.jpg")
-    #adjust size of surface
+    #Surface content (background)/ size of surface
+background_surface = pygame.image.load("images/table.jpg").convert_alpha()
 background_surface = pygame.transform.scale(background_surface, (1200, 600))
 
+#ORIGINAL CARD/ size of card "aspect ratio"
+card = pygame.image.load("cards img/ace_of_spades.png").convert_alpha()
+card1 = pygame.transform.scale_by(card, 0.2)
 
 
 
 
-#"while true" will create an infinite loop, meaning it will execute it indefinitely until the program is interrupted or terminated
+#COMMANDS
+    #"while true" will create an infinite loop, meaning it will execute it indefinitely until the program is interrupted or terminated
     #all operations inside the while loop are constantly updated 
 while True:
     for event in pygame.event.get():
@@ -27,8 +31,9 @@ while True:
             pygame.quit()
             exit()
 
- #this surface determines position of the shape (surface)
+ #COORDINATES OF SURFACES
     screen.blit(background_surface,(0,0))
+    screen.blit(card1, (100, 100))
 
     pygame.display.update()
     clock.tick(60)
