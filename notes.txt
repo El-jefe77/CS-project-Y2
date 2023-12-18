@@ -37,3 +37,7 @@ while True:
     example project pygame 
     
     https://github.com/bungee-boy/Retro-Rampage/blob/main/README.md
+
+----------------------------------
+
+    link download cards
