@@ -1,7 +1,7 @@
 import pygame
 import random
 from sys import exit
-from classes import Card
+from classes import Card #IMPORT od the class card which contains .final_card
 pygame.init()
 
 #setup the screen/ framerate
@@ -26,8 +26,6 @@ card1 = pygame.transform.scale_by(card, 0.2)
 
 
 
-
- 
 
 #COMMANDS
     #"while true" will create an infinite loop, meaning it will execute it indefinitely until the program is interrupted or terminated

@@ -27,11 +27,9 @@ class Deck:
         random.shuffle(self.cards)
 
 #checks if there is at least two cards 
-    def deal(self):
-        if len(self.cards) >= 2: #checks if there is enough cards in the deck
-            return [self.cards.pop()] #controls the number of cards given to each player (add more cards  , self.cards.pop())
-        else:
-            print("Not enough cards to deal.")
+    def deal(self, num_cards):
+            return [self.cards.pop() for _ in range(num_cards)] #controls the number of cards given to each player (add more cards  , self.cards.pop())
+
 
 # Constants
 SUITS = ['C', 'S', 'H', 'D']
@@ -40,8 +38,8 @@ VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 deck = Deck()
 deck.shuffle()
 
-first = deck.deal()
-second = deck.deal()
+first = deck.deal(4)    #change the number of cards 
+second = deck.deal(2)
 
 #outputs the combination of cards (does not prints them)
 #first two cards for player one
