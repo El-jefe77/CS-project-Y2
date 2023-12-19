@@ -1,29 +1,45 @@
-import pygame
-from sys import exit
-from classes import Card
-pygame.init()
+import random
 
-pygame.display.set_caption("Card game")
-screen = pygame.display.set_mode((1200,600))
-clock = pygame.time.Clock()              
+class Card:
+    def __init__(self, value, suit):
+        self.value = value
+        self.suit = suit 
+        
+    def show(self):
+        print("{} of {}".format(self.value, self.suit))
 
-#creation of surfaces 
-    #Surface content (background)/ size of surface
-background_surface = pygame.image.load("images/table.jpg").convert_alpha()
-background_surface = pygame.transform.scale(background_surface, (1200, 600))
+class Deck:
+    def __init__(self):
+        self.cards = [] #initializes an empty deck of cards 
+        self.create() #populates the deck mmmm
 
-#ORIGINAL CARD/ size of card "aspect ratio" (NO OOB)
-card = pygame.image.load("cards img/ace_of_spades.png").convert_alpha()
-card1 = pygame.transform.scale_by(card, 0.2)
+    def create(self):
+        self.cards = [Card(rank, suit) for suit in SUITS for rank in RANKS]
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
+    def shuffle(self):
+        random.shuffle(self.cards)
 
-    screen.blit(background_surface,(0,0))
-    screen.blit(card1, (100, 100))
+    def deal_two_cards(self):
+        if len(self.cards) >= 2:
+            return [self.cards.pop(), self.cards.pop()]
+        else:
+            print("Not enough cards to deal.")
 
-    pygame.display.update()
-    clock.tick(60)
+# Constants
+SUITS = ['C', 'S', 'H', 'D']
+RANKS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+
+# Example usage
+deck = Deck()
+deck.shuffle()
+
+player1_hand = deck.deal_two_cards()
+player2_hand = deck.deal_two_cards()
+
+print("Player 1's hand:")
+for card in player1_hand:
+    card.show()
+
+print("\nPlayer 2's hand:")
+for card in player2_hand:
+    card.show()
