@@ -1,48 +1,48 @@
 import random
 
+#THIS SECTION CONTAINS THE CREATION OF THE DECK, AND DEAL OF TWO CARDS TO EACH PLAYER 
+
 class Card:
     def __init__(self, value, suit):
         self.value = value
         self.suit = suit 
         
-    def show(self):
+        #prints cards
+    def final_card(self):
         print("{} of {}".format(self.value, self.suit))
 
+#deck of cards
+
 class Deck:
-    def __init__(self):
-        self.cards = [] # initializes an empty deck of cards 
-        self.create() # populates the deck
+    def __init__(self): #self is used to define a method in a class
+        self.cards = [] #initialize attribute called cards (is an attribute of deck, "contains class called cards" initializes an empty list of ".cards" each deck will have their own cards)
+        self.create()   #self.build is a method call within the constructor, creates the deck
+ 
+    def create(self):   #calls the METHOD create ("method is a function")
+        #THIS GENERATES A LIST OF CARD FOR ALL COMBINATIONS OF CARDS AND STORES THEM IN SELF.CARDS
+        self.cards = [Card(value, suit) for suit in SUITS for value in VALUES]
 
-    def create(self):
-        self.cards = [Card(rank, suit) for suit in SUITS for rank in RANKS]
-
+#suffle cards (deck)
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def deal_cards(self, num_cards):
-        if len(self.cards) >= num_cards:
-            return [self.cards.pop() for _ in range(num_cards)]
-        else:
-            print("Not enough cards to deal.")
-            return []
+#checks if there is at least two cards 
+    def deal(self, num_cards):
+            return [self.cards.pop() for _ in range(num_cards)] #controls the number of cards given to each player (add more cards  , self.cards.pop())
+
 
 # Constants
 SUITS = ['C', 'S', 'H', 'D']
-RANKS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
-# Example usage
 deck = Deck()
 deck.shuffle()
 
-# Deal 3 cards to player 1 and 1 card to player 2
-player1_hand = deck.deal_cards(1)
-player2_hand = deck.deal_cards(1)
+player_one = deck.deal(1)    #change the number of cards 
 
-# Display hands
-print("Player 1's hand:")
-for card in player1_hand:
-    card.show()
+#outputs the combination of cards (does not prints them)
+#first two cards for player one
+for card in player_one:
+    card.final_card()
 
-print("\nPlayer 2's hand:")
-for card in player2_hand:
-    card.show()
+

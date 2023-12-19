@@ -30,6 +30,7 @@ class Deck:
     def deal(self, num_cards):
             return [self.cards.pop() for _ in range(num_cards)] #controls the number of cards given to each player (add more cards  , self.cards.pop())
 
+###change this###
 
 # Constants
 SUITS = ['C', 'S', 'H', 'D']
@@ -38,42 +39,13 @@ VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 deck = Deck()
 deck.shuffle()
 
-first = deck.deal(4)    #change the number of cards 
-second = deck.deal(2)
+player_one = deck.deal(2)    #change the number of cards 
+#player_two = deck.deal(1)    #if you eliminate one of them you can only have player one or two 
 
 #outputs the combination of cards (does not prints them)
 #first two cards for player one
-for card in first:
+for card in player_one:
     card.final_card()
 
-for card in second: 
-    card.final_card()
-
-
-
-
-#give 2 random cards to the user 
-#if raise, then / increase bet 
-#if check, then / not raise
-#if call, then  / raise to required amount 
-#if fold then   /surrender 
-
-
-
-#random_suit = random.choice(SUITS)
-#random_ranks = random.choice(RANKS)
-
-#print(random_suit, random_ranks)
-
-
-
-
-#shuffle/ build/ random functions 
-
-#use shuffle function to make a deck of cards   
-#select first card to user, second to n player and third to table 
-              
-
-#to test the classes (outputs the value and suit of the card)
-#card = Card("Clubs", 6)
-#card.show()
+#for card in player_two: 
+ #   card.final_card()
