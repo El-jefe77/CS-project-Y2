@@ -9,7 +9,7 @@ pygame.display.set_caption("Card game")
 screen = pygame.display.set_mode((1200,600))
 clock = pygame.time.Clock()              
 
-#Surface content (background)/ size of surface "BACKGROUND"
+#Surface content (background)/ siz-e of surface "BACKGROUND"
 background_surface = pygame.image.load("images/table.jpg").convert_alpha()
 background_surface = pygame.transform.scale(background_surface, (1200, 600))
 
@@ -22,9 +22,6 @@ card1 = pygame.transform.scale_by(card, 0.2)
 #function = if card was = to heart, then check number and select a card image
 
 
-
-
-
 #COMMANDS
     #"while true" will create an infinite loop, meaning it will execute it indefinitely until the program is interrupted or terminated
     #all operations inside the while loop are constantly updated 
@@ -34,7 +31,7 @@ while True:
             pygame.quit()
             exit()
 
- #COORDINATES OF SURFACES
+ #COORDINATES OF SURFACES image
     screen.blit(background_surface,(0,0))
     screen.blit(card1, (100, 100))
 

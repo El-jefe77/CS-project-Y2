@@ -59,4 +59,4 @@ card_1 = Card ("values to each attribute")
     ----------------------------------
 https://github.com/Mozes721/BlackJack/blob/master/blackjack_game.png
 
-example 
+COMPLETED, EACH HAND IS A NEW CLASS
