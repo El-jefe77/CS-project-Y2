@@ -39,5 +39,3 @@ while True:
     clock.tick(60)
 
     #wont work due to changes in classes.py
-    #new changes 
-    #new changes
