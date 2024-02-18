@@ -1,7 +1,6 @@
 import pygame
 import random
 from sys import exit
-from classes import Card #IMPORT od the class card which contains .final_card
 pygame.init()
 
 #setup the screen/ framerate
@@ -38,3 +37,5 @@ while True:
     #framerate 
     pygame.display.update()
     clock.tick(60)
+
+    #wont work due to changes in classes.py

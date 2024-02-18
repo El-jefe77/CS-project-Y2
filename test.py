@@ -44,3 +44,4 @@ for card in player_one:
 
 for card in player_two: 
     card.final_cards_p2()
+
