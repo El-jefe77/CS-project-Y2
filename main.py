@@ -5,23 +5,20 @@ pygame.init()
 
 #setup the screen/ framerate
 pygame.display.set_caption("Card game")
-screen = pygame.display.set_mode((1200,600))
+screen = pygame.display.set_mode((1200,700))
 clock = pygame.time.Clock()              
 
 #Surface content (background)/ siz-e of surface "BACKGROUND"
 background_surface = pygame.image.load("images/table.jpg").convert_alpha()
-background_surface = pygame.transform.scale(background_surface, (1200, 600))
+background_surface = pygame.transform.scale(background_surface, (1200, 700))
 
 #object render/ ORIGINAL CARD/ size of card "aspect ratio" (NO OOB) example only 
-card = pygame.image.load("cards img/.png").convert_alpha()
+card = pygame.image.load("cards img/8H.png").convert_alpha()
 card1 = pygame.transform.scale_by(card, 0.2)
 
 
 #if card given from "classes = heart then go to heart function"
 #function = if card was = to heart, then check number and select a card image
-
-
-
 
 
 #COMMANDS
