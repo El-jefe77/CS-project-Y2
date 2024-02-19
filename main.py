@@ -13,7 +13,7 @@ background_surface = pygame.image.load("images/table.jpg").convert_alpha()
 background_surface = pygame.transform.scale(background_surface, (1200, 600))
 
 #object render/ ORIGINAL CARD/ size of card "aspect ratio" (NO OOB) example only 
-card = pygame.image.load("cards img/SPADES/ace_of_spades.png").convert_alpha()
+card = pygame.image.load("cards img/.png").convert_alpha()
 card1 = pygame.transform.scale_by(card, 0.2)
 
 
