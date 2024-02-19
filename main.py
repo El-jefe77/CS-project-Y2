@@ -21,6 +21,9 @@ card1 = pygame.transform.scale_by(card, 0.2)
 #function = if card was = to heart, then check number and select a card image
 
 
+
+
+
 #COMMANDS
     #"while true" will create an infinite loop, meaning it will execute it indefinitely until the program is interrupted or terminated
     #all operations inside the while loop are constantly updated 

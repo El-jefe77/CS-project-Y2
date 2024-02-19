@@ -13,6 +13,9 @@ class Card:
         self.value = value              #gives attribute to value 
         self.suit = suit                #gives attribute to suit 
     
+    def get_umage(self):
+        
+
     def print_card1(self):
         print(self.value, self.suit)
 
@@ -32,14 +35,21 @@ while len(Deck) < n:  # Keep adding cards until the desired size is reached
     if card not in Deck:  # Check if the card is not already in the deck
         Deck.add(card)  # Add the unique card to the deck
 
+
+
+print(list(Deck)[0])
+print(list(Deck)[0])
+print(list(Deck)[1])
+print(list(Deck)[2])
+
+
+
+
 # Print the unique cards stored in the deck 
 #for suit, value in Deck:
-    #print(value, suit)
+#   print(value, suit)
 #---------------------------------------------------------------
 #FETCH ONLY A CARD FROM THE DECK 
-
-
-
 
 
 
@@ -54,24 +64,6 @@ while len(Deck) < n:  # Keep adding cards until the desired size is reached
 #child class because inherits its values from cards
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #setup the screen/ framerate
 pygame.display.set_caption("Card game")
 screen = pygame.display.set_mode((1200,600))
@@ -83,6 +75,7 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
 
     #framerate 
     pygame.display.update()
