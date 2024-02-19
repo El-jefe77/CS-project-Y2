@@ -18,6 +18,12 @@ class Card:
     def print_card1(self):                  
         print(self.value, self.suit)
 
+    def get_image1(self):                                #return from "print[lst]"
+        return "cards img/" + str(self) + ".png"        #add value and suit to create path
+    def print_card1(self):                  
+        print(self.value, self.suit) 
+
+
     def __str__(self):
         return self.value + self.suit
 
@@ -43,6 +49,9 @@ while len(Deck) < n:  # Keep adding cards until the desired size is reached
 lst = list(Deck)            #gets card from the set created (deck)
 print(lst[0].get_image())
 
+lst = list(Deck)            #gets card from the set created (deck)
+print(lst[1].get_image())
+
 
 #setup the screen/ framerate / image size / ui 
 pygame.display.set_caption("Card game")
@@ -53,6 +62,9 @@ card = pygame.image.load(lst[0].get_image()).convert_alpha()
 card = pygame.transform.scale_by(card, 0.2)
 
 
+card1 = pygame.image.load(lst[1].get_image1()).convert_alpha()
+card1 = pygame.transform.scale_by(card1, 0.2)
+
 #COMMANDS
 while True:
     for event in pygame.event.get():
@@ -61,6 +73,7 @@ while True:
             exit()
 
     screen.blit(card, (100, 100))
+    screen.blit(card1, (400, 100))
 
 
     #framerate 
