@@ -17,6 +17,7 @@ class Card:
         self.suit = suit                #gives attribute to suit 
     #prtin the cards for player 
 
+
     def get_image(self):                                #return from "print[lst]"
         return "cards img/" + str(self) + ".png"        #add value and suit to create path
     def print_card(self):                  
@@ -54,7 +55,7 @@ lst = list(Deck)            #gets card from the set created (deck)
 print(lst[0].get_image())
 
 lst = list(Deck)            #gets card from the set created (deck)
-print(lst[1].get_image())
+print(lst[1].get_image1())
 
 
 #setup the screen/ framerate / image size / ui 
@@ -77,7 +78,6 @@ while True:
 
     screen.blit(card, (425, 475))
     screen.blit(card1, (625, 475))
-
 
     #framerate 
     pygame.display.update()
