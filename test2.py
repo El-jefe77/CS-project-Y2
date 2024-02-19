@@ -13,11 +13,14 @@ class Card:
         self.value = value              #gives attribute to value 
         self.suit = suit                #gives attribute to suit 
     
-    def get_umage(self):
-        
-
-    def print_card1(self):
+    def get_image(self):                                #return from "print[lst]"
+        return "cards img/" + str(self) + ".png"        #add value and suit to create path
+    def print_card1(self):                  
         print(self.value, self.suit)
+
+    def __str__(self):
+        return self.value + self.suit
+
 
 
 SUITS = ['C', 'S', 'H', 'D']
@@ -30,44 +33,25 @@ Deck = set()  # Initialize an empty set to store unique cards
 while len(Deck) < n:  # Keep adding cards until the desired size is reached
     random_suit = random.choice(SUITS)
     random_value = random.choice(VALUES)
-    card = (random_suit, random_value)  # Create a tuple representing the card
+    card = Card (random_value, random_suit)  # Create a tuple representing the card
 
     if card not in Deck:  # Check if the card is not already in the deck
         Deck.add(card)  # Add the unique card to the deck
 
 
 
-print(list(Deck)[0])
-print(list(Deck)[0])
-print(list(Deck)[1])
-print(list(Deck)[2])
+lst = list(Deck)            #gets card from the set created (deck)
+print(lst[0].get_image())
 
 
-
-
-# Print the unique cards stored in the deck 
-#for suit, value in Deck:
-#   print(value, suit)
-#---------------------------------------------------------------
-#FETCH ONLY A CARD FROM THE DECK 
-
-
-
-
-
-
-#print the fetched from the deck 
-    #not working as it doesnt fetch from created deck 
-#card = Card ("A", "S")
-#card.print_card1( )
-
-#child class because inherits its values from cards
-
-
-#setup the screen/ framerate
+#setup the screen/ framerate / image size / ui 
 pygame.display.set_caption("Card game")
 screen = pygame.display.set_mode((1200,600))
 clock = pygame.time.Clock()   
+
+card = pygame.image.load(lst[0].get_image()).convert_alpha()
+card = pygame.transform.scale_by(card, 0.2)
+
 
 #COMMANDS
 while True:
@@ -75,6 +59,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
+    screen.blit(card, (100, 100))
 
 
     #framerate 
