@@ -1,1 +1,1 @@
-the
+pygame.display.set_caption("button")
