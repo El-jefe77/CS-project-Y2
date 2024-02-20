@@ -51,34 +51,4 @@ while len(Deck) < n:  # Keep adding cards until the desired size is reached
 
 
 
-lst = list(Deck)            #gets card from the set created (deck)
-print(lst[0].get_image())
 
-lst = list(Deck)            #gets card from the set created (deck)
-print(lst[1].get_image1())
-
-
-#setup the screen/ framerate / image size / ui 
-pygame.display.set_caption("Card game")
-screen = pygame.display.set_mode((1200,700))
-clock = pygame.time.Clock()   
-
-card = pygame.image.load(lst[0].get_image()).convert_alpha()
-card = pygame.transform.scale_by(card, 0.25)
-
-card1 = pygame.image.load(lst[1].get_image1()).convert_alpha()
-card1 = pygame.transform.scale_by(card1, 0.25)
-
-#COMMANDS
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-
-    screen.blit(card, (425, 475))
-    screen.blit(card1, (625, 475))
-
-    #framerate 
-    pygame.display.update()
-    clock.tick(60)
