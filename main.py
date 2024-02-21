@@ -60,6 +60,14 @@ card_n1 = pygame.transform.scale_by(card_n1, 0.20)
 card_n2 = pygame.image.load(lst[7].get_image1()).convert_alpha()
 card_n2 = pygame.transform.scale_by(card_n2, 0.20)
 
+#dealer
+card_d1 = pygame.image.load(lst[8].get_image()).convert_alpha()
+card_d1 = pygame.transform.scale(card_d1, (int(card_d1.get_width() * 0.20), int(card_d1.get_height() * 0.20)))
+card_d2 = pygame.image.load(lst[9].get_image1()).convert_alpha()
+card_d2 = pygame.transform.scale(card_d2, (int(card_d2.get_width() * 0.20), int(card_d2.get_height() * 0.20)))
+card_d3 = pygame.image.load(lst[10].get_image()).convert_alpha()
+card_d3 = pygame.transform.scale(card_d3, (int(card_d3.get_width() * 0.20), int(card_d3.get_height() * 0.20)))
+
 
 
 
@@ -94,6 +102,10 @@ while True:
     screen.blit(card_n2, (400, 200))
     screen.blit(card_e1, (150, 520))
     screen.blit(card_e2, (100, 400))
+    screen.blit(card_d1, (475, 250))
+    screen.blit(card_d2, (575, 250))
+    screen.blit(card_d3, (675, 250))
+    
 
     #draw the button on the screen
     pygame.draw.rect(screen, (0, 0, 0), button_menu)      #colour of button

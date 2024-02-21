@@ -4,12 +4,6 @@ import random
 from sys import exit
 pygame.init()
 
-#this is an example of the use of polymorphism due to the 
-#use of many forms of the same thing / same family
-
-#card and card1 are given to the players 
-#card2 and card3 given to table and rest to the other players 
-
 #parent class 
 class Card:
     def __init__(self, value, suit):    #this is the constructor of the class
