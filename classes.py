@@ -22,10 +22,18 @@ class Card:
         return "cards img/" + str(self) + ".png"        #add value and suit to create path
     def print_card(self):                  
         print(self.value, self.suit)
-
     def get_image1(self):                                #return from "print[lst]"
         return "cards img/" + str(self) + ".png"        #add value and suit to create path
     def print_card1(self):                  
+        print(self.value, self.suit) 
+
+    def get_image3(self):                                #return from "print[lst]"
+        return "cards img/" + str(self) + ".png"        #add value and suit to create path
+    def print_image3(self):                  
+        print(self.value, self.suit)
+    def get_image4(self):                                #return from "print[lst]"
+        return "cards img/" + str(self) + ".png"        #add value and suit to create path
+    def print_image4(self):                  
         print(self.value, self.suit) 
 
 
@@ -48,7 +56,4 @@ while len(Deck) < n:  # Keep adding cards until the desired size is reached
 
     if card not in Deck:  # Check if the card is not already in the deck
         Deck.add(card)  # Add the unique card to the deck
-
-
-
 

@@ -13,6 +13,7 @@ clock = pygame.time.Clock()
 background_surface = pygame.image.load("images/table.jpg").convert_alpha()
 background_surface = pygame.transform.scale(background_surface, (1200, 700))
 
+
 #BUTTONS
 font = pygame.font.SysFont("ARIAL", 30, bold=True)     #font /// font size
 surf_menu = font.render("Menu", True, "white")                #text inside the button / colour
@@ -38,30 +39,27 @@ print(lst[1].get_image1())
 # CARD size / ui / images cards and background 
 card = pygame.image.load(lst[0].get_image()).convert_alpha()
 card = pygame.transform.scale_by(card, 0.20)
-
 card1 = pygame.image.load(lst[1].get_image1()).convert_alpha()
 card1 = pygame.transform.scale_by(card1, 0.20)
 
-#cards player west
-#card_w1 = pygame.image.load(lst[2].get_image()).convert_alpha()
-#card_w1 = pygame.transform.scale_by(card, 0.20)
-#
-#card1 = pygame.image.load(lst[3].get_image1()).convert_alpha()
-#card1 = pygame.transform.scale_by(card1, 0.20)
-#
-##cards player nort
-#card = pygame.image.load(lst[4].get_image()).convert_alpha()
-#card = pygame.transform.scale_by(card, 0.20)
-#
-#card1 = pygame.image.load(lst[5].get_image1()).convert_alpha()
-#card1 = pygame.transform.scale_by(card1, 0.20)
-#
-##cards player east
-#card = pygame.image.load(lst[6].get_image()).convert_alpha()
-#card = pygame.transform.scale_by(card, 0.20)
-#
-#card1 = pygame.image.load(lst[7].get_image1()).convert_alpha()
-#card1 = pygame.transform.scale_by(card1, 0.20)
+#west
+card_w1 = pygame.image.load(lst[2].get_image()).convert_alpha()
+card_w1 = pygame.transform.scale_by(card_w1, 0.20)
+card_w2 = pygame.image.load(lst[3].get_image1()).convert_alpha()
+card_w2 = pygame.transform.scale_by(card_w2, 0.20)
+
+#east
+card_e1 = pygame.image.load(lst[4].get_image()).convert_alpha()
+card_e1 = pygame.transform.scale_by(card_e1, 0.20)
+card_e2 = pygame.image.load(lst[5].get_image1()).convert_alpha()
+card_e2 = pygame.transform.scale_by(card_e2, 0.20)
+
+#north 
+card_n1 = pygame.image.load(lst[6].get_image()).convert_alpha()
+card_n1 = pygame.transform.scale_by(card_n1, 0.20)
+card_n2 = pygame.image.load(lst[7].get_image1()).convert_alpha()
+card_n2 = pygame.transform.scale_by(card_n2, 0.20)
+
 
 
 
@@ -87,19 +85,23 @@ while True:
 
  #COORDINATES OF SURFACES CARDS (position of cards)
     screen.blit(background_surface,(0,0))
+
     screen.blit(card, (425, 520))
     screen.blit(card1, (625, 520))
+    screen.blit(card_w1, (900, 200))
+    screen.blit(card_w2, (950, 200))
+    screen.blit(card_n1, (550, 200))
+    screen.blit(card_n2, (400, 200))
+    screen.blit(card_e1, (150, 520))
+    screen.blit(card_e2, (100, 400))
 
     #draw the button on the screen
     pygame.draw.rect(screen, (0, 0, 0), button_menu)      #colour of button
     screen.blit(surf_menu, (button_menu.x + 7, button_menu.y + 7))  # position of the text inside button
-
     pygame.draw.rect(screen, (0, 0, 100), button_check)      #colour of button
     screen.blit(surf_check, (button_check.x, button_check.y ))  # position of the text inside button
-
     pygame.draw.rect(screen, (0, 0, 100), button_raise)      #colour of button
     screen.blit(surf_raise, (button_raise.x, button_raise.y ))  # position of the text inside button
-
     pygame.draw.rect(screen, (0, 0, 100), button_fold)      #colour of button
     screen.blit(surf_fold, (button_fold.x, button_fold.y ))  # position of the text inside button
 
@@ -107,4 +109,3 @@ while True:
     #framerate 
     pygame.display.update()
     clock.tick(60)
-

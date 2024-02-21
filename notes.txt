@@ -114,3 +114,29 @@ for card in player_one:
 for card in player_two: 
     card.final_cards_p2()
 
+
+----------------------------------------------------------------
+CODE TO PRINT OTHER CARDS FOR PLAYERS 
+
+#cards player west
+#card_w1 = pygame.image.load(lst[2].get_image()).convert_alpha()
+#card_w1 = pygame.transform.scale_by(card, 0.20)
+
+#card1 = pygame.image.load(lst[3].get_image1()).convert_alpha()
+#card1 = pygame.transform.scale_by(card1, 0.20)
+
+##cards player nort
+#card = pygame.image.load(lst[4].get_image()).convert_alpha()
+#card = pygame.transform.scale_by(card, 0.20)
+
+#card1 = pygame.image.load(lst[5].get_image1()).convert_alpha()
+#card1 = pygame.transform.scale_by(card1, 0.20)
+
+##cards player east
+#card = pygame.image.load(lst[6].get_image()).convert_alpha()
+#card = pygame.transform.scale_by(card, 0.20)
+
+#card1 = pygame.image.load(lst[7].get_image1()).convert_alpha()
+#card1 = pygame.transform.scale_by(card1, 0.20)
+
+
