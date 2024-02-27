@@ -28,47 +28,38 @@ button_raise = pygame.Rect(700, 600, 80, 50)
 surf_fold = font.render("Fold", True, "white")                #text inside the button / colour
 button_fold = pygame.Rect(200, 600, 80, 50)    
 
-#object render/ 
-lst = list(Deck)             #gets card from the set created (deck)
-print(lst[0].get_image())
-
-lst = list(Deck)            #gets card from the set created (deck)
-print(lst[1].get_image1())
-
 
 # CARD size / ui / images cards and background 
-card = pygame.image.load(lst[0].get_image()).convert_alpha()
+card = pygame.image.load(Deck[0].get_image()).convert_alpha()
 card = pygame.transform.scale_by(card, 0.20)
-card1 = pygame.image.load(lst[1].get_image1()).convert_alpha()
+card1 = pygame.image.load(Deck[1].get_image1()).convert_alpha()
 card1 = pygame.transform.scale_by(card1, 0.20)
 
 #west
-card_w1 = pygame.image.load(lst[2].get_image()).convert_alpha()
+card_w1 = pygame.image.load(Deck[2].get_image()).convert_alpha()
 card_w1 = pygame.transform.scale_by(card_w1, 0.20)
-card_w2 = pygame.image.load(lst[3].get_image1()).convert_alpha()
+card_w2 = pygame.image.load(Deck[3].get_image1()).convert_alpha()
 card_w2 = pygame.transform.scale_by(card_w2, 0.20)
 
 #east
-card_e1 = pygame.image.load(lst[4].get_image()).convert_alpha()
+card_e1 = pygame.image.load(Deck[4].get_image()).convert_alpha()
 card_e1 = pygame.transform.scale_by(card_e1, 0.20)
-card_e2 = pygame.image.load(lst[5].get_image1()).convert_alpha()
+card_e2 = pygame.image.load(Deck[5].get_image1()).convert_alpha()
 card_e2 = pygame.transform.scale_by(card_e2, 0.20)
 
 #north 
-card_n1 = pygame.image.load(lst[6].get_image()).convert_alpha()
+card_n1 = pygame.image.load(Deck[6].get_image()).convert_alpha()
 card_n1 = pygame.transform.scale_by(card_n1, 0.20)
-card_n2 = pygame.image.load(lst[7].get_image1()).convert_alpha()
+card_n2 = pygame.image.load(Deck[7].get_image1()).convert_alpha()
 card_n2 = pygame.transform.scale_by(card_n2, 0.20)
 
 #dealer
-card_d1 = pygame.image.load(lst[8].get_image()).convert_alpha()
+card_d1 = pygame.image.load(Deck[8].get_image()).convert_alpha()
 card_d1 = pygame.transform.scale(card_d1, (int(card_d1.get_width() * 0.20), int(card_d1.get_height() * 0.20)))
-card_d2 = pygame.image.load(lst[9].get_image1()).convert_alpha()
+card_d2 = pygame.image.load(Deck[9].get_image1()).convert_alpha()
 card_d2 = pygame.transform.scale(card_d2, (int(card_d2.get_width() * 0.20), int(card_d2.get_height() * 0.20)))
-card_d3 = pygame.image.load(lst[10].get_image()).convert_alpha()
+card_d3 = pygame.image.load(Deck[10].get_image()).convert_alpha()
 card_d3 = pygame.transform.scale(card_d3, (int(card_d3.get_width() * 0.20), int(card_d3.get_height() * 0.20)))
-
-
 
 
 while True:
@@ -105,7 +96,6 @@ while True:
     screen.blit(card_d1, (475, 250))
     screen.blit(card_d2, (575, 250))
     screen.blit(card_d3, (675, 250))
-    
 
     #draw the button on the screen
     pygame.draw.rect(screen, (0, 0, 0), button_menu)      #colour of button
@@ -116,7 +106,6 @@ while True:
     screen.blit(surf_raise, (button_raise.x, button_raise.y ))  # position of the text inside button
     pygame.draw.rect(screen, (0, 0, 100), button_fold)      #colour of button
     screen.blit(surf_fold, (button_fold.x, button_fold.y ))  # position of the text inside button
-
 
     #framerate 
     pygame.display.update()

@@ -21,16 +21,6 @@ class Card:
     def print_card1(self):                  
         print(self.value, self.suit) 
 
-    def get_image3(self):                                #return from "print[lst]"
-        return "cards img/" + str(self) + ".png"        #add value and suit to create path
-    def print_image3(self):                  
-        print(self.value, self.suit)
-    def get_image4(self):                                #return from "print[lst]"
-        return "cards img/" + str(self) + ".png"        #add value and suit to create path
-    def print_image4(self):                  
-        print(self.value, self.suit) 
-
-
     def __str__(self):
         return self.value + self.suit
 
@@ -41,13 +31,11 @@ VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
 #random generator 
 n = 52
-Deck = set()  # Initialize an empty set to store unique cards
+Deck = []
 
-while len(Deck) < n:  # Keep adding cards until the desired size is reached
-    random_suit = random.choice(SUITS)
-    random_value = random.choice(VALUES)
-    card = Card (random_value, random_suit)  # Create a tuple representing the card
+for suit in SUITS:
+    for value in VALUES:
+        Deck.append(Card(value, suit))
+        print(value, suit)
 
-    if card not in Deck:  # Check if the card is not already in the deck
-        Deck.add(card)  # Add the unique card to the deck
-
+random.shuffle(Deck)
