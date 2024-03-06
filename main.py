@@ -13,6 +13,10 @@ clock = pygame.time.Clock()
 background_surface = pygame.image.load("images/table.jpg").convert_alpha()
 background_surface = pygame.transform.scale(background_surface, (1200, 700))
 
+backcard_surface = pygame.image.load("images/back_card.png").convert_alpha()
+backcard_surface = pygame.transform.scale(backcard_surface, (50, 50))
+
+
 
 #BUTTONS
 font = pygame.font.SysFont("ARIAL", 30, bold=True)     #font /// font size
@@ -61,29 +65,37 @@ card_d2 = pygame.transform.scale(card_d2, (int(card_d2.get_width() * 0.20), int(
 card_d3 = pygame.image.load(Deck[10].get_image()).convert_alpha()
 card_d3 = pygame.transform.scale(card_d3, (int(card_d3.get_width() * 0.20), int(card_d3.get_height() * 0.20)))
 
+show_backcard = True  # control wether if backcard is shown or not
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-
         if event.type == pygame.MOUSEBUTTONDOWN:        #button actions constructor 
             if button_menu.collidepoint(event.pos):
-                print("HOLA MENU :)")                        #action of button
+                pygame.quit
+                exit()
+                
         if event.type == pygame.MOUSEBUTTONDOWN:        #button actions constructor 
             if button_check.collidepoint(event.pos):
                 print("HOLA CHECK :)")                        #action of button
         if event.type == pygame.MOUSEBUTTONDOWN:        #button actions constructor 
             if button_raise.collidepoint(event.pos):
                 print("HOLA RAISE :)")  
+
+                show_backcard == pygame.MOUSEBUTTONDOWN
         if event.type == pygame.MOUSEBUTTONDOWN:        #button actions constructor 
             if button_fold.collidepoint(event.pos):
-                print("HOLA FOLD :)")  
-
+                show_backcard = not show_backcard
+                #this removes and adds the back card each time is pressed 
+                #need to change so that it only removes the card when pressed 
 
  #COORDINATES OF SURFACES CARDS (position of cards)
     screen.blit(background_surface,(0,0))
+    if show_backcard:
+        screen.blit(backcard_surface, (100, 100))
+        screen.blit(backcard_surface, (200, 200))
 
     screen.blit(card, (450, 430))
     screen.blit(card1, (555, 430))
