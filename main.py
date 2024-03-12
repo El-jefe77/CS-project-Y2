@@ -16,7 +16,7 @@ background_surface = pygame.transform.scale(background_surface, (1200, 700))
 backcard_surface = pygame.image.load("images/back_card.png").convert_alpha()
 backcard_surface = pygame.transform.scale(backcard_surface, (50, 50))
 
-
+#hi owen
 
 #BUTTONS
 font = pygame.font.SysFont("ARIAL", 30, bold=True)     #font /// font size
