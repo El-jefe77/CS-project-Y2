@@ -23,7 +23,7 @@ class Card:
 
     def __str__(self):
         return self.value + self.suit
-
+#new changes
 
 
 SUITS = ['C', 'S', 'H', 'D']

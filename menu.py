@@ -63,9 +63,9 @@ while True:
     quit_button_rect = quit_button
 
     # Draw settings button
-    settings_button = pygame.Rect(screen.get_width() - 120, 20, 100, 40)
+    settings_button = pygame.Rect(screen.get_width() - 120, 20, 300, 40)
     pygame.draw.rect(screen, gray, settings_button)
-    draw_text("SETTINGS", font, black, screen.get_width() - 70, 40)
+    draw_text("SETTINGS", font, black, screen.get_width() -60 , 40)
     settings_button_rect = settings_button
 
     # Define play_button_rect
