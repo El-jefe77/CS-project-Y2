@@ -16,11 +16,7 @@ class Card:
         return "cards img/" + str(self) + ".png"        #add value and suit to create path
     def print_card(self):                  
         print(self.value, self.suit)
-    def get_image1(self):                                #return from "print[lst]"
-        return "cards img/" + str(self) + ".png"        #add value and suit to create path
-    def print_card1(self):                  
-        print(self.value, self.suit) 
-
+        
     def __str__(self):
         return self.value + self.suit
 #new changes
@@ -36,6 +32,6 @@ Deck = []
 for suit in SUITS:
     for value in VALUES:
         Deck.append(Card(value, suit))
-        print(value, suit)
 
+#        print(value, suit) this function prints the whole deck but in order 
 random.shuffle(Deck)
