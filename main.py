@@ -86,6 +86,14 @@ card_d3 = pygame.transform.scale(card_d3, (int(card_d3.get_width() * 0.20), int(
 #print(Deck[n])
 
 
+if Deck[10].value == Deck[9].value and Deck[8].value == Deck[7].value:
+    print("Yes, there are two pairs.")
+elif Deck[10].value == Deck[9].value and Deck[6].value == Deck[5].value:
+    print("Yes, there are two pairs.")
+elif Deck[10].value == Deck[8].value and Deck[7].value == Deck[5].value:
+    print("Yes, there are two pairs.")
+else:
+    print("No, there are not two pairs.")
 
 
 
