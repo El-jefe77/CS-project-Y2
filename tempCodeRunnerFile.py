@@ -1,2 +1,2 @@
 
-#Royal Flush	
+#if deck === to this, then asign value of one 

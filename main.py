@@ -64,6 +64,10 @@ card_d2 = pygame.image.load(Deck[9].get_image()).convert_alpha()
 card_d2 = pygame.transform.scale(card_d2, (int(card_d2.get_width() * 0.20), int(card_d2.get_height() * 0.20)))
 card_d3 = pygame.image.load(Deck[10].get_image()).convert_alpha()
 card_d3 = pygame.transform.scale(card_d3, (int(card_d3.get_width() * 0.20), int(card_d3.get_height() * 0.20)))
+card_d4 = pygame.image.load(Deck[11].get_image()).convert_alpha()
+card_d4 = pygame.transform.scale(card_d4, (int(card_d4.get_width() * 0.20), int(card_d4.get_height() * 0.20)))
+card_d5 = pygame.image.load(Deck[12].get_image()).convert_alpha()
+card_d5 = pygame.transform.scale(card_d5, (int(card_d5.get_width() * 0.20), int(card_d5.get_height() * 0.20)))
 
 
 
@@ -82,20 +86,6 @@ card_d3 = pygame.transform.scale(card_d3, (int(card_d3.get_width() * 0.20), int(
 #Two Pair
 #Pair
 #High Card
-
-#print(Deck[n])
-
-
-if Deck[10].value == Deck[9].value and Deck[8].value == Deck[7].value:
-    print("Yes, there are two pairs.")
-elif Deck[10].value == Deck[9].value and Deck[6].value == Deck[5].value:
-    print("Yes, there are two pairs.")
-elif Deck[10].value == Deck[8].value and Deck[7].value == Deck[5].value:
-    print("Yes, there are two pairs.")
-else:
-    print("No, there are not two pairs.")
-
-
 
 
 show_backcard = True  # control wether if backcard is shown or not
@@ -138,9 +128,11 @@ while True:
     screen.blit(card_e1, (950, 250))
     screen.blit(card_e2, (980, 250))
 
-    screen.blit(card_d1, (475, 250))
-    screen.blit(card_d2, (575, 250))
-    screen.blit(card_d3, (675, 250))
+    screen.blit(card_d1, (375, 250))
+    screen.blit(card_d2, (475, 250))
+    screen.blit(card_d3, (575, 250))
+    screen.blit(card_d4, (675, 250))
+    screen.blit(card_d5, (775, 250))
 
     #draw the button on the screen
     pygame.draw.rect(screen, (0, 0, 0), button_menu)      #colour of button
@@ -155,3 +147,13 @@ while True:
     #framerate 
     pygame.display.update()
     clock.tick(60)
+
+
+    
+#if wanna play
+    #then deal 2 cards for the players
+    #if wanna keep playing then
+        #then reveal 3 cards 
+        #if not then reveal all cards
+            #second round begins and after, deal another card
+            #append that card to the dictionary 
